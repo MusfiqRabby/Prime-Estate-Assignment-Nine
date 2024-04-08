@@ -5,11 +5,15 @@ import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
+
 
 const Register = () => {
     const {createUser, userProfile} = useContext(AuthContext);
     const [registerError, setRegisterError] = useState('')
     const [success, setSuccess] = useState('')
+    const [showPassword, setShowPassword] = useState(false); 
 
     const {register, handleSubmit,
         formState: { errors },
@@ -38,8 +42,6 @@ const Register = () => {
               return
             }
            
-            
-            
             createUser(email, password)
             .then(() =>{
               userProfile( fullName, photoURL)
@@ -50,9 +52,6 @@ const Register = () => {
               setRegisterError(error.message)
             })
           }
-          
-          
-          
           return (
             <div className="hero min-h-screen bg-base-200">
           <Helmet>
@@ -89,7 +88,19 @@ const Register = () => {
         <label className="label">
            <span className="label-text">Password</span>
          </label>
-         <input type="password" name="password" placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
+       
+        <div className="mb-4 relative ">
+        <input 
+         type={ showPassword ?'text' :"password"} name="password" 
+         placeholder="password" className="input w-full input-bordered"
+          {...register("password", { required: true })} />
+          <span className="absolute top-4 right-2" onClick={() => setShowPassword(!showPassword)}>
+            {
+              showPassword ? <FaEyeSlash></FaEyeSlash>:
+              <FaEye></FaEye>
+            }
+          </span>
+        </div>
          {errors.password && <span className="text-red-600">This field is required</span>}
          <label className="label">
           <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
