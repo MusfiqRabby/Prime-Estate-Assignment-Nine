@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import Swiper from "./Swiper";
+import Slider from "./Slider";
 
 const Home = () => {
     return (
@@ -7,7 +7,7 @@ const Home = () => {
             <Helmet>
                 <title>Real-Estate | Home</title>
             </Helmet>
-            <Swiper></Swiper> 
+          <Slider></Slider>
         </div>
     );
 };

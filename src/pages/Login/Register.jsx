@@ -1,33 +1,63 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useForm } from "react-hook-form";
-
+import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-
     const {createUser, userProfile} = useContext(AuthContext);
+    const [registerError, setRegisterError] = useState('')
+    const [success, setSuccess] = useState('')
 
     const {register, handleSubmit,
         formState: { errors },
       } = useForm();
 
-      const onSubmit = (data) => 
-      {
-        console.log(data)
-        // createUser and update profile 
+      const onSubmit = (data) =>{   
+        // reset error
+      setRegisterError('')
+      setSuccess('');
+
+      // createUser and update profile 
         const {email, password, 
             photoURL, 
             fullName} = data
-        createUser(email, password)
-        .then(() =>{
-            userProfile( fullName, photoURL)
-        })
 
-      }
-    
-    return (
-        <div className="hero min-h-screen bg-base-200">
+            if(password.length < 6){
+              toast('password must be at least 6 character')
+              return;
+            }
+            else if(!/[A-Z]/.test(password)){
+              toast('Must have an Uppercase letter in the password')
+              return;
+            }
+            else if(!/[a-z]/.test(password)){
+              toast('Must have a Lowercase letter in the password')
+              return
+            }
+           
+            
+            
+            createUser(email, password)
+            .then(() =>{
+              userProfile( fullName, photoURL)
+              setSuccess('User Created successfully')
+            })
+            .catch(error => {
+              console.log(error);
+              setRegisterError(error.message)
+            })
+          }
+          
+          
+          
+          return (
+            <div className="hero min-h-screen bg-base-200">
+          <Helmet>
+            <title>Real-Estate | Register</title>
+          </Helmet>
         <div className="hero-content flex-col ">
     <div className="text-center">
        <h1 className="text-5xl font-bold">Please Register</h1>
@@ -69,10 +99,19 @@ const Register = () => {
          <button className="btn btn-primary">Register</button>
        </div>
          </form>
+
+          {
+            registerError && <p className="text-red-700">{registerError}</p>
+          }
+          {
+            success && <p className="text-green-700 font-bold">{success}</p>
+          }
+
          <p>Already have an account?<Link className="text-blue-600 font-bold" to='/login'> Login </Link>  </p> 
       </div>
      </div>
      </div>
+     <ToastContainer />
     </div> 
     );
 };
