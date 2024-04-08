@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 
 const Navbar = () => {
@@ -7,7 +9,12 @@ const Navbar = () => {
         <li> <NavLink to='/'>Home</NavLink> </li>
         <li> <NavLink to='/update profile'>Update Profile</NavLink> </li>
         <li> <NavLink to='/user profile'>User Profile</NavLink> </li>
+        <li> <NavLink to='/login'>Login</NavLink> </li>
     </>
+
+    const {logOut, user} = useContext(AuthContext);
+
+  
 
     return (
     <div className="navbar bg-base-100">
@@ -28,14 +35,30 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
+
+     {
+        user? <div className="dropdown dropdown-end">
+         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full">
+          <img src={user?.photoURL || "https://i.ibb.co/cv8B8ws/19021605.jpg" } />
+         </div>
+        </label>
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+           <li>
+         <button className="btn btn-sm  btn-ghost">{user?.displayName || 'user name not found'}</button>
+         </li>
+        <li>
+       <button
+             onClick={logOut}
+              className="btn btn-sm  btn-ghost">Logout</button>
+          </li>
+        </ul>
       </div>
-    <Link to="/update profile">
-    <a className="btn">Login</a>
-    </Link>
+        :
+     <Link to='/login'>
+     <button className="btn btn-sm  btn-ghost">Login</button>
+      </Link>
+     }
   </div>
 </div>
     );

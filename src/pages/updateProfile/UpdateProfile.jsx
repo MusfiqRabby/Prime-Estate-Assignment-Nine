@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 
 const UpdateProfile = () => {
   
-    const handleLogin = e =>{
-        e.preventDefault()
-        console.log(e.currentTarget)
-        const form = new FormData(e.currentTarget);
-        console.log(form.get('email'));
-    }
+   
   
     return (
         <div>
@@ -17,10 +12,10 @@ const UpdateProfile = () => {
                 <title>Real-Estate | Update Profile</title>
             </Helmet>
 
-    <div className="hero min-h-screen bg-base-200">
+    {/* <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col ">
     <div className="text-center">
-      <h1 className="text-5xl font-bold">Login now</h1>
+      <h1 className="text-5xl font-bold">Update Profile</h1>
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div className="card-body">
@@ -44,11 +39,11 @@ const UpdateProfile = () => {
           <button className="btn btn-primary">Login</button>
         </div>
         </form>
-         <p>Don't have an account <Link className="text-blue-600 font-bold" to='/user profile'> UserProfile </Link>  </p> 
+         <p>Don't have an account <Link className="text-blue-600 font-bold" to='/register'> Register </Link>  </p> 
       </div>
     </div>
   </div>
-</div>
+</div> */}
 </div>
     );
 };
