@@ -1,16 +1,23 @@
 import { Helmet } from "react-helmet-async";
 import Slider from "./Slider";
+import RealEstate from "./RealEstate";
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
+
     return (
         <div>
             <Helmet>
                 <title>Real-Estate | Home</title>
             </Helmet>
-          <Slider></Slider>
+            <Slider></Slider>
+            <RealEstate></RealEstate>
+
         </div>
+
+
+
     );
-    // <div class="swiper-slide">Slide 1</div>
 };
 
 export default Home;

@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Modern Single-family homes",
+    "segment_name": "Single-family homes",
+    "description": "Contemporary apartment located in the heart of the city. Offers sleek design and urban living.",
+    "price": "$400,000",
+    "status": "sale",
+    "area": "1200 sq ft",
+    "location": "Downtown",
+    "facilities": ["Living room", "Kitchen", "Balcony", "Gym"],
+    "image": "https://i.ibb.co/VYPxpLK/new-buildings-with-green-areas.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Luxury apartments",
+    "segment_name": "apartments",
+    "description": "Luxurious villa with stunning ocean views and private beach access. Ideal for relaxation and entertainment.",
+    "price": "$2,500,000",
+    "status": "rent",
+    "area": "6000 sq ft",
+    "location": "Beachfront",
+    "facilities": ["Living room", "Swimming pool", "Kitchen", "Home theater"],
+    "image": "https://i.ibb.co/tB4fNFD/relaxation-pool-umbrella-lounge-sky.jpg"
+  },
+  {
+    "id": 3,
+    "estate_title": "student housing",
+    "segment_name": "housing",
+    "description": "Quaint cottage nestled in peaceful countryside surroundings. Perfect for a serene retreat.",
+    "price": "$300,000",
+    "status": "sale",
+    "area": "1500 sq ft",
+    "location": "Rural",
+    "facilities": ["Living room", "Kitchen", "Garden"],
+    "image": "https://i.ibb.co/qBkbKD3/4304547.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "vacation rentals ",
+    "segment_name": "vacation rentals",
+    "description": "Elegant townhouse featuring classic architecture and modern amenities, situated in a historic district.",
+    "price": "$700,000",
+    "status": "rent",
+    "area": "2500 sq ft",
+    "location": "Historic district",
+    "facilities": ["Living room", "Kitchen", "Courtyard", "Library"],
+    "image": "https://i.ibb.co/P4kf2vs/analog-landscape-city-with-buildings.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "townhouses",
+    "segment_name": "townhouses",
+    "description": "Spectacular mountain retreat offering breathtaking views and serene surroundings. Perfect for nature lovers.",
+    "price": "$800,000",
+    "status": "sale",
+    "area": "3000 sq ft",
+    "location": "Mountain",
+    "facilities": ["Living room", "Kitchen", "Deck", "Hot tub"],
+    "image": "https://i.ibb.co/3c828r8/luxury-pool-villa-spectacular-contemporary-design-digital-art-real-estate-home-house-property-ge.jpg"
+  },
+  {
+    "id": 6,
+    "estate_title": "senior living communities",
+    "segment_name": "living communities",
+    "description": "Stylish loft apartment in a vibrant urban neighborhood. Perfect for contemporary city living.",
+    "price": "$500,000",
+    "status": "rent",
+    "area": "1800 sq ft",
+    "location": "Urban",
+    "facilities": [
+      "Living room",
+      "Kitchen",
+      "Open-plan layout",
+      "Fitness center"
+    ],
+    "image": "https://i.ibb.co/Ss18ctj/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv.jpg"
+  }
+]
