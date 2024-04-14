@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import SocialLogin from "./SocialLogin";
 import { Helmet } from "react-helmet-async";
 
+import {useNavigate} from 'react-router-dom'
+
 const Login = () => {
    
    const {loginUser} = useContext(AuthContext)
@@ -14,12 +16,14 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const redirect = useNavigate()
+
   const onSubmit = (data) => 
   {
     const {email, password} = data;
         loginUser(email, password)
         .then(result => {
-            console.log(result.user)
+            redirect("/user-profile")
         })
         .catch(error =>{
             console.log(error)

@@ -4,15 +4,17 @@ import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 
 const Navbar = () => {
+
+  
+  const {logOut, user} = useContext(AuthContext);
    
     const navLinks = <>
         <li> <NavLink to='/'>Home</NavLink> </li>
         <li> <NavLink to='/update profile'>Update Profile</NavLink> </li>
-        <li> <NavLink to='/user profile'>User Profile</NavLink> </li>
+        {/* {user && <li> <NavLink to='/user-profile'>User Profile</NavLink> </li>} */}
         <li> <NavLink to='/login'>Login</NavLink> </li>
     </>
 
-    const {logOut, user} = useContext(AuthContext);
 
   
 
@@ -46,6 +48,9 @@ const Navbar = () => {
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
            <li>
          <button className="btn btn-sm  btn-ghost">{user?.displayName || 'user name not found'}</button>
+         </li>
+         <li>
+         <Link className="text-center items-center btn btn-sm  btn-ghost" to='/user-profile'>User Profile</Link>
          </li>
         <li>
        <button

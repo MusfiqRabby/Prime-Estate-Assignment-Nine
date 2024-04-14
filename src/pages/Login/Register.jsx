@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
+import { useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
@@ -14,6 +15,9 @@ const Register = () => {
     const [registerError, setRegisterError] = useState('')
     const [success, setSuccess] = useState('')
     const [showPassword, setShowPassword] = useState(false); 
+
+
+    const redirect = useNavigate()
 
     const {register, handleSubmit,
         formState: { errors },
@@ -46,6 +50,7 @@ const Register = () => {
             .then(() =>{
               userProfile( fullName, photoURL)
               setSuccess('User Created successfully')
+              redirect("/user-profile")
             })
             .catch(error => {
               console.log(error);

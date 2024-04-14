@@ -1,14 +1,19 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../FirebaseProvider/FirebaseProvider';
 
+import { useNavigate } from 'react-router-dom'
+
 const SocialLogin = () => {
   
   const {googleLogin, githubLogin} = useContext(AuthContext)
+
+  const redirect = useNavigate()
 
     const handleSocialLoging = socialProvider =>{
         socialProvider()
         .then(result => {
             console.log(result.user)
+            redirect("user-profile")
         })
     }
 
