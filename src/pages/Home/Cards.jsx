@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 
 const Cards = ({ card }) => {
-    const { estate_title, image, status, price, area, location } = card;
+    const {id, estate_title, image, status, price, area, location } = card;
 
     return (
         <div className="card card-compact  bg-base-100 shadow-xl">
@@ -21,7 +22,9 @@ const Cards = ({ card }) => {
             <hr />
             <p className="text-lg font-semibold">Location :- {location}</p>
           <div className="card-actions justify-end">
-            <button className="btn text-white bg-gradient-to-r from-cyan-500 to-blue-500">View Property</button>
+           <Link to={`/card/${id}`}>
+           <button className="btn text-white bg-gradient-to-r from-cyan-500 to-blue-500">View Property</button>
+           </Link>
           </div>
         </div>
       </div>

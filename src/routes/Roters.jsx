@@ -8,6 +8,7 @@ import UserProfile from "../pages/userProfile/UserProfile";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
 import NotFound from "../pages/Navbar/NotFound";
+import Details from "../pages/Home/Details";
 
 const router = createBrowserRouter([
     {
@@ -34,7 +35,13 @@ const router = createBrowserRouter([
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '/card/:id',
+          element: <Details></Details>,
+          loader: () => fetch('../fakeData.json')
         }
+      
       ]
     },
   ]);
