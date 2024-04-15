@@ -28,10 +28,7 @@ const Register = () => {
       setRegisterError('')
       setSuccess('');
 
-      // createUser and update profile 
-        const {email, password, 
-            photoURL, 
-            fullName} = data
+      //
 
             if(password.length < 6){
               toast('password must be at least 6 character')

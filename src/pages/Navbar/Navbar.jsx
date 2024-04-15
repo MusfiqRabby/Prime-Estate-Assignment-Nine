@@ -50,7 +50,7 @@ const Navbar = () => {
          <button className="btn btn-sm  btn-ghost">{user?.displayName || 'user name not found'}</button>
          </li>
          <li>
-         <Link className="text-center items-center btn btn-sm  btn-ghost" to='/user-profile'>User Profile</Link>
+         <Link className="text-center items-center btn btn-sm  btn-ghost" to='/update profile'>Update Profile</Link>
          </li>
         <li>
        <button

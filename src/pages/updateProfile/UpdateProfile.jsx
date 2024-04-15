@@ -1,9 +1,28 @@
+import { useContext, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import { useNavigate } from "react-router-dom";
+
 
 
 const UpdateProfile = () => {
   
+  // const { logOut, user } = useContext(AuthContext);
+
+  // const redirect = useNavigate()
+  // useEffect(() => {
+  //     if (!user) {
+  //         redirect("/login")
+  //     }
+  // }, [])
+  const {} = useContext(AuthContext)
+  const {logOut, user} = useContext(AuthContext);
+  const redirect = useNavigate()
+  useEffect(() => {
+      if (!user) {
+          redirect("/login")
+      }
+  }, [])
    
   
     return (
@@ -12,38 +31,15 @@ const UpdateProfile = () => {
                 <title>Real-Estate | Update Profile</title>
             </Helmet>
 
-    {/* <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col ">
-    <div className="text-center">
-      <h1 className="text-5xl font-bold">Update Profile</h1>
-    </div>
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <div className="card-body">
-        <form onClick={handleLogin}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+        <div className="items-center text-center">
+          <div>
+          <img src={user?.photoURL || "https://i.ibb.co/cv8B8ws/19021605.jpg" } />
+            </div> 
+          <div>
+         <button className="btn btn-sm  btn-ghost">{user?.displayName || 'user name not found'}</button>
+            </div> 
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
-          <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
-        </div>
-        <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
-        </div>
-        </form>
-         <p>Don't have an account <Link className="text-blue-600 font-bold" to='/register'> Register </Link>  </p> 
-      </div>
-    </div>
-  </div>
-</div> */}
+
 </div>
     );
 };

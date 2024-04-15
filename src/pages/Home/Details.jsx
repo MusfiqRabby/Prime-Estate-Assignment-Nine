@@ -10,12 +10,12 @@ const Details = () => {
 
     return (
         <div>
-            <div className="grid grid-cols-2 gap-10 mb-5">
+            <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:mb-5">
         <div>
           <img src={card.image} alt="" />
         </div>
         <div>
-          <h1 className="text-4xl font-bold mb-2 text-indigo-500 hover:text-slate-400">
+          <h1 className="text-4xl font-bold lg:mb-2 text-indigo-500 hover:text-slate-400">
             {card.estate_title}
           </h1>
           <hr />
@@ -26,10 +26,8 @@ const Details = () => {
           </h4>
           <div>
           <div>
-             <p className="font-medium mb-3">Price: {card.price}</p>
+             <p className="font-medium lg:mb-3">Price: {card.price}</p>
           </div>
-            {/* book.tags.map(idx => <span className="text-[#23BE0A] mr-4">#{idx}</span>) */}
-
           </div>
           <hr />
           <div className="flex gap-8 mt-2">
@@ -41,7 +39,7 @@ const Details = () => {
             </div>
             <div>
               <p className="font-bold mb-1">{card.area}</p>
-              <p className="font-bold mb-1">{card.facilities.map(idx => <span className="text-[#23BE0A] mr-4">{idx}</span>)}</p>
+              <p className="font-bold mb-1">{card.facilities.map(idx => <span className="text-[#23BE0A] lg:mr-2 ">{idx}</span>)}</p>
               <p className="font-bold mb-1">{card.location}</p>
               <p className="font-bold mb-1">{card.segment_name}</p>
             </div>

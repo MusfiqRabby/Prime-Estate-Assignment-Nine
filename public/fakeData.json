@@ -20,7 +20,7 @@
     "status": "rent",
     "area": "6000 sq ft",
     "location": "Beachfront",
-    "facilities": ["Living room", "Swimming pool", "Kitchen", "Home theater"],
+    "facilities": ["Living room", "Swimming pool", "Kitchen"],
     "image": "https://i.ibb.co/tB4fNFD/relaxation-pool-umbrella-lounge-sky.jpg"
   },
   {
@@ -71,8 +71,7 @@
     "facilities": [
       "Living room",
       "Kitchen",
-      "Open-plan layout",
-      "Fitness center"
+      "Open-plan layout"
     ],
     "image": "https://i.ibb.co/Ss18ctj/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv.jpg"
   }
