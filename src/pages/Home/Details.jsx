@@ -1,12 +1,23 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import { AuthContext } from '../../FirebaseProvider/FirebaseProvider';
 
 const Details = () => {
+
+  const {} = useContext(AuthContext)
+  const {logOut, user} = useContext(AuthContext);
+  const redirect = useNavigate()
+  useEffect(() => {
+      if (!user) {
+          redirect("/login")
+      }
+  }, [])
+
 
     const cards = useLoaderData();
     const {id} = useParams();
     const idInt = parseInt(id);
     const card = cards.find(card => card.id === idInt);
-    console.log(card);
 
     return (
         <div>

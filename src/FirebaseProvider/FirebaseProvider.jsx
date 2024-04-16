@@ -14,6 +14,7 @@ const FirebaseProvider = ({children}) => {
 
     // state 
     const [user, setUser] = useState(null)
+    console.log(user)
 
     // create user 
     const createUser = (email, password) =>{
@@ -29,7 +30,6 @@ const FirebaseProvider = ({children}) => {
             photoURL: image
           })
     }
-
 
 
     // login in user

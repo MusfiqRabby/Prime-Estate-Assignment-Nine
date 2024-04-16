@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   return (
@@ -25,9 +26,10 @@ const Slider = () => {
               <div className="hero-overlay bg-opacity-60"></div>
               <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                  <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                  <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                  <button className="btn btn-primary">Get Started</button>
+                  <h1 className="mb-5 text-5xl font-bold">The Better Way to Buy Real-Estate</h1>
+                  <p className="mb-5">Transforming dreams into luxurious realities. <br />
+                  Exprience the epitome of luxury living. Elevating lifestyle, one exquisite property at a time</p>
+                  <button className="btn btn-primary"> <Link to="/Details">Explore Properties</Link> </button>
                 </div>
               </div>
             </div>
@@ -39,9 +41,10 @@ const Slider = () => {
               <div className="hero-overlay bg-opacity-60"></div>
               <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                  <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                  <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                  <button className="btn btn-primary">Get Started</button>
+                  <h1 className="mb-5 text-5xl font-bold">The Better Way to Buy Real-Estate</h1>
+                  <p className="mb-5">Transforming dreams into luxurious realities. <br />
+                  Exprience the epitome of luxury living. Elevating lifestyle, one exquisite property at a time</p>
+                  <button className="btn btn-primary"> <Link to="/Details">Explore Properties</Link> </button>
                 </div>
               </div>
             </div>
@@ -53,9 +56,10 @@ const Slider = () => {
               <div className="hero-overlay bg-opacity-60"></div>
               <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                  <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                  <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                  <button className="btn btn-primary">Get Started</button>
+                  <h1 className="mb-5 text-5xl font-bold">The Better Way to Buy Real-Estate</h1>
+                  <p className="mb-5">Transforming dreams into luxurious realities. <br />
+                  Exprience the epitome of luxury living. Elevating lifestyle, one exquisite property at a time</p>
+                  <button className="btn btn-primary"> <Link to="/Details">Explore Properties</Link> </button>
                 </div>
               </div>
             </div>

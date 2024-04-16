@@ -17,18 +17,24 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false); 
 
 
-    const redirect = useNavigate()
+    // const redirect = useNavigate()
 
     const {register, handleSubmit,
         formState: { errors },
       } = useForm();
 
       const onSubmit = (data) =>{   
+        const {email, password, fullName, photoURL} = data
+        // createUser(email,password)
+        // .then(result => {
+        //   console.log(result.user)
+        // })
+      
         // reset error
       setRegisterError('')
       setSuccess('');
 
-      //
+    
 
             if(password.length < 6){
               toast('password must be at least 6 character')
@@ -40,14 +46,15 @@ const Register = () => {
             }
             else if(!/[a-z]/.test(password)){
               toast('Must have a Lowercase letter in the password')
-              return
+              return;
             }
            
             createUser(email, password)
             .then(() =>{
               userProfile( fullName, photoURL)
-              setSuccess('User Created successfully')
-              redirect("/user-profile")
+              toast.success('registration successfull')
+              // setSuccess('User Created successfully')
+              // redirect("/")
             })
             .catch(error => {
               console.log(error);
@@ -57,7 +64,7 @@ const Register = () => {
           return (
             <div className="hero min-h-screen bg-base-200">
           <Helmet>
-            <title>Real-Estate | Register</title>
+            <title>Prime-Estate | Register</title>
           </Helmet>
         <div className="hero-content flex-col ">
     <div className="text-center">
@@ -120,7 +127,7 @@ const Register = () => {
             success && <p className="text-green-700 font-bold">{success}</p>
           }
 
-         <p>Already have an account?<Link className="text-blue-600 font-bold" to='/login'> Login </Link>  </p> 
+         <p>Already have an account?<Link className="text-blue-600 font-bold" to='/login'> Login </Link></p> 
       </div>
      </div>
      </div>

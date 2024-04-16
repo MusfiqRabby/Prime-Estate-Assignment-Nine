@@ -11,12 +11,9 @@ const Navbar = () => {
     const navLinks = <>
         <li> <NavLink to='/'>Home</NavLink> </li>
         <li> <NavLink to='/update profile'>Update Profile</NavLink> </li>
-        {/* {user && <li> <NavLink to='/user-profile'>User Profile</NavLink> </li>} */}
-        <li> <NavLink to='/login'>Login</NavLink> </li>
+        {/* <li> <NavLink to='/login'>Login</NavLink> </li> */}
     </>
 
-
-  
 
     return (
     <div className="navbar bg-base-100">
@@ -29,7 +26,7 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Real-Estate</a>
+    <a className="btn btn-ghost text-xl">Prime-Estate</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
