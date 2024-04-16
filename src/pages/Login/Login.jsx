@@ -35,7 +35,7 @@ const Login = () => {
   }
   
     return (
-          <div className="hero min-h-screen bg-base-200">
+          <div className="hero min-h-screen bg-base-200" data-aos="zoom-in-up" data-aos-duration="1500">
             <Helmet>
               <title>Prime-Estate | Login </title>
             </Helmet>

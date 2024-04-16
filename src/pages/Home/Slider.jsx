@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Slider = () => {
   return (
 
-    <div>
+    <div className="" data-aos="flip-right" data-aos-duration="1000">
 
       <Swiper 
       navigation={true}
@@ -21,7 +21,7 @@ const Slider = () => {
       }}
       >
         <SwiperSlide>
-          <div className="slide slide1">
+          <div className="slide slide1 " >
             <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/42dMyRQ/aerial-shot-city-buildings-toa-payoh-singapore-blue-sky.jpg)' }}>
               <div className="hero-overlay bg-opacity-60"></div>
               <div className="hero-content text-center text-neutral-content">

@@ -20,7 +20,7 @@ const Details = () => {
     const card = cards.find(card => card.id === idInt);
 
     return (
-        <div>
+        <div data-aos="flip-left" data-aos-duration="1500">
             <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:mb-5">
         <div>
           <img src={card.image} alt="" />

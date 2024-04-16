@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
+
 const Cards = ({ card }) => {
     const {id, estate_title, image, status, price, area, location } = card;
 
     return (
-        <div className="card card-compact  bg-base-100 shadow-xl">
+        <div className="card card-compact  bg-base-100 shadow-xl" data-aos="flip-right" data-aos-duration="1000">
         <figure><img className="w-[420px] h-[210px] p-3 rounded-2xl" src={image} /></figure>
         
         <div className="card-body mx-0">
