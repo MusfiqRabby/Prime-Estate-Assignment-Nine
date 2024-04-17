@@ -15,6 +15,7 @@ const FirebaseProvider = ({children}) => {
     // state 
     const [user, setUser] = useState(null)
     console.log(user)
+     const [loading , setLoading] = useState(null);
 
     // create user 
     const createUser = (email, password) =>{
@@ -66,7 +67,7 @@ const FirebaseProvider = ({children}) => {
 
 
 
-    const allValues = {user, createUser, loginUser, googleLogin, githubLogin, logOut, userProfile }
+    const allValues = {user, setUser, createUser, loginUser, googleLogin, githubLogin, logOut, userProfile }
 
     return (
         <AuthContext.Provider value={allValues}>

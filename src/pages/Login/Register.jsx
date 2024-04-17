@@ -6,18 +6,17 @@ import { Helmet } from "react-helmet-async";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-
-import { useNavigate } from 'react-router-dom'
+ import { useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
-    const {createUser, userProfile} = useContext(AuthContext);
+    const {createUser, userProfile, user, setUser} = useContext(AuthContext);
     const [registerError, setRegisterError] = useState('')
     const [success, setSuccess] = useState('')
     const [showPassword, setShowPassword] = useState(false); 
 
 
-    // const redirect = useNavigate()
+      const redirect = useNavigate()
 
     const {register, handleSubmit,
         formState: { errors },
@@ -25,16 +24,8 @@ const Register = () => {
 
       const onSubmit = (data) =>{   
         const {email, password, fullName, photoURL} = data
-        // createUser(email,password)
-        // .then(result => {
-        //   console.log(result.user)
-        // })
-      
-        // reset error
       setRegisterError('')
       setSuccess('');
-
-    
 
             if(password.length < 6){
               toast('password must be at least 6 character')
@@ -52,9 +43,12 @@ const Register = () => {
             createUser(email, password)
             .then(() =>{
               userProfile( fullName, photoURL)
-              toast.success('registration successfull')
-              // setSuccess('User Created successfully')
-              // redirect("/")
+              .then(() => {
+                setUser({...user, displayName : fullName, photoURL})
+              })
+              alert('registration successfull')
+              
+                redirect("/")
             })
             .catch(error => {
               console.log(error);

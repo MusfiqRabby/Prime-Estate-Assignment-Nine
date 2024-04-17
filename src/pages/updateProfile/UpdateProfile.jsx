@@ -34,7 +34,7 @@ const UpdateProfile = () => {
                     <p className="font-bold">Name: {user?.displayName || 'user name not found'}</p>
                 </div>
                 <div>
-                    <p className="font-bold">Name: {user?.email || 'user name not found'}</p>
+                    <p className="font-bold">Email: {user?.email || 'user name not found'}</p>
                 </div>
 
         <div className="form-control">

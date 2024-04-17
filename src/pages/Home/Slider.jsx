@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 const Slider = () => {
   return (
 
-    <div className="" data-aos="flip-right" data-aos-duration="1000">
+    <div className="" data-aos="flip-left"
+    data-aos-easing="ease-out-cubic"
+    data-aos-duration="1500">
 
       <Swiper 
       navigation={true}
@@ -29,7 +31,7 @@ const Slider = () => {
                   <h1 className="mb-5 text-5xl font-bold">The Better Way to Buy Real-Estate</h1>
                   <p className="mb-5">Transforming dreams into luxurious realities. <br />
                   Exprience the epitome of luxury living. Elevating lifestyle, one exquisite property at a time</p>
-                  <button className="btn btn-primary"> <Link to="/Details">Explore Properties</Link> </button>
+                  <button className="btn btn-primary"> <Link to="/register">Register Now</Link> </button>
                 </div>
               </div>
             </div>
@@ -44,7 +46,7 @@ const Slider = () => {
                   <h1 className="mb-5 text-5xl font-bold">The Better Way to Buy Real-Estate</h1>
                   <p className="mb-5">Transforming dreams into luxurious realities. <br />
                   Exprience the epitome of luxury living. Elevating lifestyle, one exquisite property at a time</p>
-                  <button className="btn btn-primary"> <Link to="/Details">Explore Properties</Link> </button>
+                  <button className="btn btn-primary"> <Link to="/register">Register Now</Link> </button>
                 </div>
               </div>
             </div>
@@ -59,7 +61,7 @@ const Slider = () => {
                   <h1 className="mb-5 text-5xl font-bold">The Better Way to Buy Real-Estate</h1>
                   <p className="mb-5">Transforming dreams into luxurious realities. <br />
                   Exprience the epitome of luxury living. Elevating lifestyle, one exquisite property at a time</p>
-                  <button className="btn btn-primary"> <Link to="/Details">Explore Properties</Link> </button>
+                  <button className="btn btn-primary"> <Link to="/register">Register Now</Link> </button>
                 </div>
               </div>
             </div>

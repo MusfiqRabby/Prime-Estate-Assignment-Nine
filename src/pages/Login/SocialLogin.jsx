@@ -1,20 +1,24 @@
 import React, { useContext } from 'react';
 import { FaGoogle, FaGithub  } from "react-icons/fa";
 import { AuthContext } from '../../FirebaseProvider/FirebaseProvider';
-
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const SocialLogin = () => {
   
   const {googleLogin, githubLogin} = useContext(AuthContext)
 
-  const redirect = useNavigate()
+   const navigate = useNavigate()
+   const lacation = useLocation()
+    const from = lacation?.state || "/";
 
     const handleSocialLoging = socialProvider =>{
         socialProvider()
         .then(result => {
-            console.log(result.user)
-            redirect("/")
+          if(result.user){
+            navigate(from)
+          }
+            // console.log(result.user)
+            // // redirect("/")
         })
     }
 

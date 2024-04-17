@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import SocialLogin from "./SocialLogin";
 import { Helmet } from "react-helmet-async";
 
-// import {useNavigate} from 'react-router-dom'
+ import {useNavigate} from 'react-router-dom'
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
@@ -17,7 +17,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  // const redirect = useNavigate()
+   const redirect = useNavigate()
 
   const onSubmit = (data) => 
   {
@@ -26,16 +26,18 @@ const Login = () => {
         .then(result => {
           console.log(result.user)
           
-            // redirect("/update profile")
+             redirect("/")
         })
         .catch(error =>{
-          toast.success('login SuccessFully')
+          console.log(error)
         })
 
   }
   
     return (
-          <div className="hero min-h-screen bg-base-200" data-aos="zoom-in-up" data-aos-duration="1500">
+          <div className="hero min-h-screen bg-base-200" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
             <Helmet>
               <title>Prime-Estate | Login </title>
             </Helmet>
