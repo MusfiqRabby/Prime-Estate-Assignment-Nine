@@ -47,11 +47,11 @@ const Navbar = () => {
               </div>
               <button
                 onClick={logOut}
-                className="btn btn-sm  btn-ghost">Logout</button>
+                className="btn btn-sm font-bold text-black hover:hover:bg-cyan-500 btn-ghost">Logout</button>
             </>
             :
             <Link to='/login'>
-              <button className="btn btn-sm  btn-ghost">Login</button>
+              <button className="btn btn-sm font-bold btn-ghost text-black hover:bg-cyan-500 ">Login</button>
             </Link>
         }
       </div>
