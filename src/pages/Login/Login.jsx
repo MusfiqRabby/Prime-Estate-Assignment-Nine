@@ -23,17 +23,20 @@ const Login = () => {
   {
     const {email, password} = data;
         loginUser(email, password)
-        .then(result => {
+        .then((result) => {
           console.log(result.user)
-          
-             redirect("/")
+          toast.success("login successfully")
+          setTimeout(() => redirect("/"), 2000)
+             
         })
-        .catch(error =>{
+        .catch((error) =>{
           console.log(error)
+          toast.warning('wrong password or email, please try again')
         })
 
-  }
-  
+      }
+      
+ 
     return (
           <div className="hero min-h-screen bg-base-200" data-aos="fade-right"
      data-aos-offset="300"
@@ -75,11 +78,8 @@ const Login = () => {
       </div>
     </div>
   </div>
+<ToastContainer/> 
 </div> 
     );
 };
-
- <ToastContainer/>
-            
-
 export default Login;

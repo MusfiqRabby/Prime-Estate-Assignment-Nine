@@ -10,7 +10,7 @@ const Navbar = () => {
    
     const navLinks = <>
         <li> <NavLink to='/'>Home</NavLink> </li>
-        <li> <NavLink to='/update profile'>Update Profile</NavLink> </li>
+        <li> <NavLink to='/update profile'>Update Profile</NavLink></li>
         <li> <NavLink to='/contact'>Contact</NavLink> </li>
     </>
 
@@ -33,7 +33,7 @@ const Navbar = () => {
     {navLinks}
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end ">
 
      {
         user? <div className="dropdown dropdown-end">
@@ -44,7 +44,9 @@ const Navbar = () => {
         </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
            <li>
-         <button className="btn btn-sm btn-ghost  "> {user?.displayName || 'user name not found'}"</button>
+         <button className="btn btn-sm btn-ghost  "> 
+          {user?.displayName || 'user not found'}
+         </button>
          </li>
          <li>
          <Link className="text-center items-center btn btn-sm  btn-ghost" to='/update profile'>Update Profile</Link>

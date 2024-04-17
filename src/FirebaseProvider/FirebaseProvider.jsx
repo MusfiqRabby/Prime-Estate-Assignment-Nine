@@ -14,9 +14,8 @@ const FirebaseProvider = ({children}) => {
 
     // state 
     const [user, setUser] = useState(null)
-    console.log(user)
      const [loading , setLoading] = useState(true);
-    console.log(loading)
+   
 
 
     // create user 

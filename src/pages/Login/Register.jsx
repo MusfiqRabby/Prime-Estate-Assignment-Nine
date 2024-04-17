@@ -47,11 +47,10 @@ const Register = () => {
                 setUser({...user, displayName : fullName, photoURL})
               })
               alert('registration successfull')
-              
                 redirect("/")
             })
             .catch(error => {
-              console.log(error);
+              toast.warning("this email already used")
               setRegisterError(error.message)
             })
           }
