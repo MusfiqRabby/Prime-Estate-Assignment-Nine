@@ -15,10 +15,13 @@ const FirebaseProvider = ({children}) => {
     // state 
     const [user, setUser] = useState(null)
     console.log(user)
-     const [loading , setLoading] = useState(null);
+     const [loading , setLoading] = useState(true);
+    console.log(loading)
+
 
     // create user 
     const createUser = (email, password) =>{
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
   
@@ -35,16 +38,19 @@ const FirebaseProvider = ({children}) => {
 
     // login in user
     const loginUser = (email, password) =>{
+        setLoading(true);
       return  signInWithEmailAndPassword(auth, email, password)
     }
 
     // google login
     const googleLogin = () =>{
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     // Github login
     const githubLogin = () =>{
+        setLoading(true);
         return signInWithPopup(auth, githubProvider)
     }
 
@@ -60,6 +66,7 @@ const FirebaseProvider = ({children}) => {
         onAuthStateChanged(auth, (user) =>{
             if(user) {
                 setUser(user)
+                setLoading(false);
             }
         })
     },[])
@@ -67,7 +74,7 @@ const FirebaseProvider = ({children}) => {
 
 
 
-    const allValues = {user, setUser, createUser, loginUser, googleLogin, githubLogin, logOut, userProfile }
+    const allValues = {user, setUser, createUser, loginUser, googleLogin, githubLogin, logOut, userProfile, loading }
 
     return (
         <AuthContext.Provider value={allValues}>
