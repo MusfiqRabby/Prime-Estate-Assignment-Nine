@@ -23,14 +23,14 @@ const Contact = () => {
             <Helmet>
             <title>Prime-Estate | Contact</title>
           </Helmet>
-            <div className="flex">
+            <div className="lg:flex">
               <div className="border my-8 p-8 mx-8">
-              <div class="rounded-lg h-40 w-full lg:w-[374px] mx-auto m-6 bg-[#bced6d1a] p-10">
+              <div class="rounded-lg h-40 w-full lg:w-[374px] mx-auto lg:m-6 bg-[#bced6d1a] lg:p-10">
                 <img src="" alt="" />
                  <p class="text-[#131318] mx-8 opacity-70">Phone Number : </p> 
                  <span class="text-[#131318] mx-8 font-medium">(+62) 123-321-543</span>
                   </div>
-                  <div class="rounded-lg h-40 w-full lg:w-[374px] my-6 mx-auto bg-[#fddd5f1a] p-10">
+                  <div class="rounded-lg lg:h-40 w-full lg:w-[374px] my-6 mx-auto bg-[#fddd5f1a] p-10">
                   <img src="" alt="" />
                     <p class="text-[#131318] mx-8 opacity-70">Email : </p> 
                       <span class="text-[#131318] mx-8 font-medium">apertment@support.com</span>
